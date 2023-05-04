@@ -37,8 +37,8 @@
   📑 Requisites
 </h3>
 
-#### You need to download the project folder <a href="https://github.com/EndrewSK/TicTacToeGame/archive/refs/heads/master.zip">clicking here</a>.<br>
-#### Furthermore you need too to download the python <a href="https://www.python.org/downloads/">clicking here</a>.
+#### You need to download the project folder <a href="https://github.com/EndrewSK/TicTacToeGame/archive/refs/heads/master.zip target="_blank">clicking here</a>.<br>
+#### Furthermore you need too to download the python <a href="https://www.python.org/downloads/" target="_blank">clicking here</a>.
 
 ---
 
