@@ -16,7 +16,7 @@
 
 </p>
 <div align="center">
-  <img alt="Tic Tac Toe Game" src="https://i.ibb.co/NS47nzg/imagem-2023-05-03-220344431.png" align="center">
+  <img alt="Tic Tac Toe Game" src="https://i.ibb.co/vDv9RKn/image.png" align="center">
 </div>
 
 <h3>
