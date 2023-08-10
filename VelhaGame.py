@@ -1,59 +1,37 @@
-def install_and_import(package):
-    import importlib
-    try:
-        importlib.import_module(package)
-    except ImportError:
-        import pip
-        pip.main(['install', package])
-    finally:
-        globals()[package] = importlib.import_module(package)
-install_and_import('art')
-
-def install_and_import(package):
-    import importlib
-    try:
-        importlib.import_module(package)
-    except ImportError:
-        import pip
-        pip.main(['install', package])
-    finally:
-        globals()[package] = importlib.import_module(package)
-install_and_import('random')
-
-def install_and_import(package):
-    import importlib
-    try:
-        importlib.import_module(package)
-    except ImportError:
-        import pip
-        pip.main(['install', package])
-    finally:
-        globals()[package] = importlib.import_module(package)
-install_and_import('msvcrt')
-
-def install_and_import(package):
-    import importlib
-    try:
-        importlib.import_module(package)
-    except ImportError:
-        import pip
-        pip.main(['install', package])
-    finally:
-        globals()[package] = importlib.import_module(package)
-install_and_import('time')
-
+import subprocess
+import sys
 from os import system
-from time import sleep
-from art import *
-import msvcrt
-import random
 
+try:
+    from time import sleep
+    import art
+    import msvcrt
+    import random
+    
+except ImportError:
+    system('')
+
+    g = "\033[92m"
+    r = "\033[91m"
+    end = "\033[0m"
+
+    def install(packages):
+        for package in packages:
+            try:
+                subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+                print(f"{g}{package} foi instalado com sucesso!{end}")
+            except subprocess.CalledProcessError as err:
+                print(f"{r}Erro ao instalar {package}.{end}")
+                print(f"Erro: {err}")
+
+    install(['msvcrt', 'time',  'art', 'random'])
+    
 cmd = 'mode 90, 30'
 system(cmd)
 system('cls')
 
-gaming = text2art(("Jogo  da  Velha").center(38), font="small")
-bye = text2art(("\n"*11) + ("Tchau :)".center(53)), font="medium")
+gaming = art.text2art(("Jogo  da  Velha").center(38), font="small")
+bye = art.text2art(("\n"*11) + ("Tchau :)".center(53)), font="medium")
 
 def welcome():
     print(("\n"*3).center(20) + "*"*70)
@@ -72,12 +50,13 @@ def menu():
 
     options = ["Jogar contra computador", "Jogar contra player", "Ver as instruções", "Sair"]
     selected = 0
-
+    
+    cmd = 'mode 39, 30'
+    system(cmd)
+       
     while True:
         
         system('cls')
-        cmd = 'mode 39, 30'
-        system(cmd)
         
         for i, option in enumerate(options):
             if i == selected:
